@@ -5,19 +5,19 @@ namespace HorsePasteReplica.Hubs
 {
     public class ButtonHub : Hub
     {
-        public async Task ChangeButtonRed()
+        public async Task ChangeButtonRed(string buttonId)
         {
-            await Clients.All.SendAsync("ReceiveButtonRed");
+            await Clients.All.SendAsync("ReceiveButtonRed", buttonId);
         }
 
-        public async Task ChangeButtonBlue()
+        public async Task ChangeButtonBlue(string buttonId)
         {
-            await Clients.All.SendAsync("ReceiveButtonBlue");
+            await Clients.All.SendAsync("ReceiveButtonBlue", buttonId);
         }
 
-        public async Task ChangeButtonGreen()
+        public async Task ChangeButtonGreen(string buttonId)
         {
-            await Clients.All.SendAsync("ReceiveButtonGreen");
+            await Clients.All.SendAsync("ReceiveButtonGreen", buttonId);
         }
     }
 }
