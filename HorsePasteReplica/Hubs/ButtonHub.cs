@@ -19,5 +19,15 @@ namespace HorsePasteReplica.Hubs
         {
             await Clients.All.SendAsync("ReceiveButtonGreen", buttonId);
         }
+
+        public async Task ChangeButtonBlack(string buttonId)
+        {
+            await Clients.All.SendAsync("ReceiveButtonBlack", buttonId);
+        }
+
+        public async Task ShowAllButtons()
+        {
+            await Clients.Caller.SendAsync("ReceiveShowAll");
+        }
     }
 }

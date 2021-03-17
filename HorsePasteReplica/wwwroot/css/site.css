@@ -70,32 +70,70 @@ body {
   line-height: 60px; /* Vertically center the text there */
 }
 
-.redButtonActive {
-    color: white;
-    background: red;
-}
-
-.greenButtonActive {
-    color: white;
-    background: green;
-}
-
-.blueButtonActive {
-    color: white;
-    background: blue;
-}
-
-.redButton {
+/* Button Design */
+.butn {
     color: black;
     background: white;
+    justify-self: stretch;
+    align-self: stretch;
 }
 
-.greenButton {
-    color: black;
-    background: white;
+#button1 {
+    grid-column-start: 1;
+    grid-row-start: 1;
 }
 
-.blueButton {
-    color: black;
-    background: white;
+#button2 {
+    grid-column-start: 2;
+    grid-row-start: 1;
+}
+
+#button3 {
+    grid-column-start: 3;
+    grid-row-start: 1;
+}
+
+#button4 {
+    grid-column-start: 4;
+    grid-row-start: 1;
+}
+
+#button5 {
+    grid-column-start: 5;
+    grid-row-start: 1;
+}
+
+#button6 {
+    grid-column-start: 6;
+    grid-row-start: 1;
+}
+
+#button7 {
+    grid-column-start: 7;
+    grid-row-start: 1;
+}
+
+#button8 {
+    grid-column-start: 1;
+    grid-row-start: 2;
+}
+
+#button9 {
+    grid-column-start: 2;
+    grid-row-start: 2;
+}
+
+#button10 {
+    grid-column-start: 3;
+    grid-row-start: 2;
+}
+
+
+/* container */
+.cont {
+    display: grid; 
+    grid-template-columns: auto auto auto auto auto auto auto;
+    grid-template-rows: auto auto auto auto auto;
+    grid-gap: 0px 0px;
+    justify-items: stretch;
 }
