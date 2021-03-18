@@ -8,11 +8,11 @@ using System.Threading.Tasks;
 
 namespace HorsePasteReplica.Pages
 {
-    public class PrivacyModel : PageModel
+    public class GameModel : PageModel
     {
-        private readonly ILogger<PrivacyModel> _logger;
+        private readonly ILogger<GameModel> _logger;
 
-        public PrivacyModel(ILogger<PrivacyModel> logger)
+        public GameModel(ILogger<GameModel> logger)
         {
             _logger = logger;
         }
