@@ -131,9 +131,9 @@ body {
 
 /* container */
 .cont {
-    display: grid; 
+    display: grid;
     grid-template-columns: auto auto auto auto auto auto auto;
-    grid-template-rows: auto auto auto auto auto;
+    grid-template-rows: 100px 100px 100px 100px 100px;
     grid-gap: 0px 0px;
     justify-items: stretch;
 }

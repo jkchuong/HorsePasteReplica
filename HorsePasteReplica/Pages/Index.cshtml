@@ -1,35 +1,32 @@
 ﻿@page
+@using System
 <div class="cont">
-    <div class="col-6">
-        <input type="button" id="button1" class="butn redButton" value="Horse" />
-    </div>
-    <div class="col-6">
-        <input type="button" id="button2" class="butn blueButton" value="Paste" />
-    </div>
-    <div class="col-6">
-        <input type="button" id="button3" class="butn greenButton" value="Replica" />
-    </div>
-    <div class="col-6">
-        <input type="button" id="button4" class="butn blackButton" value="Word" />
-    </div>
-    <div class="col-6">
-        <input type="button" id="button5" class="butn redButton" value="Foo" />
-    </div>
-    <div class="col-6">
-        <input type="button" id="button6" class="butn redButton" value="Bar" />
-    </div>
-    <div class="col-6">
-        <input type="button" id="button7" class="butn greenButton" value="Chicken" />
-    </div>
-    <div class="col-6">
-        <input type="button" id="button8" class="butn redButton" value="Cathy" />
-    </div>
-    <div class="col-6">
-        <input type="button" id="button9" class="butn greenButton" value="Martin" />
-    </div>
-    <div class="col-6">
-        <input type="button" id="button10" class="butn blueButton" value="Paula" />
-    </div>
+    @{Dictionary<string, int> colourDict = new Dictionary<string, int>
+{
+        { "redButton", 0 },
+        { "blueButton", 0 },
+        { "greenButton", 0 },
+        { "blackButton", 0 }
+    };
+        var rnd = new Random(100); }
+
+    @for (int i = 1; i <= 35; i++)
+    {
+        int colourIndex = rnd.Next(colourDict.Count);
+        KeyValuePair<string, int>
+            pair = colourDict.ElementAt(colourIndex);
+        colourDict[pair.Key]++;
+
+        <input type="button" id="button@(i.ToString())" value="Button@(i.ToString())" class="butn @pair.Key" />
+
+        if ((colourDict[pair.Key] >= 8 && pair.Key == "redButton")
+        || (colourDict[pair.Key] >= 8 && pair.Key == "greenButton")
+        || (colourDict[pair.Key] >= 9 && pair.Key == "blueButton")
+        || (colourDict[pair.Key] >= 10 && pair.Key == "blackButton"))
+        {
+            colourDict.Remove(pair.Key);
+        }
+    }
 </div>
 <div class="row">
     <div class="col-12">
@@ -37,7 +34,12 @@
     </div>
 </div>
 <div class="row">
-    <input type="button" id="spy" value="SpyMaster" title="spymaster"/>
+    <input type="button" id="spy" value="SpyMaster" title="spymaster" />
+</div>
+<div class="row">
+    <div class="col-12">
+        <hr />
+    </div>
 </div>
 <script src="~/js/signalr/dist/browser/signalr.js"></script>
 <script src="~/js/button.js"></script>
