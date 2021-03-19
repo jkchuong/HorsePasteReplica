@@ -1,18 +1,13 @@
 ﻿@page
 @model IndexModel
-@using System
-@using Methods
 @{
     ViewData["Title"] = "Codenames Replica";
 }
 <h1>@ViewData["Title"]</h1>
-<div class="row">
-    <input type="number" id="seed" value="Seed" title="seed" />
-</div>
-<div class="row">
-    <input type="button" id="spy" value="SpyMaster" title="spymaster" />
-</div>
-
+<form class="row" method="post" action="">
+    <input type="text" name="seedString" asp-for="Seed" />
+    <button type="submit" value="Submit" asp-page="Game"/>
+</form>
 <div class="row">
     <div class="col-12">
         <hr />

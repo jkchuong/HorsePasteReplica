@@ -3,21 +3,23 @@
 @using System
 @using Methods
 <div class="cont">
-    @{Dictionary<string, int> colourDict = new Dictionary<string, int>
-{
+    @{ var seedString = (string)Request.Form["seedString"];
+        int seed = Converter.StringToInt(seedString);
+        Dictionary<string, int> colourDict = new Dictionary<string, int>
+    {
         { "redButton", 0 },
         { "blueButton", 0 },
         { "greenButton", 0 },
         { "blackButton", 0 }
     };
-        var rnd = new Random(100);
-        WordGenerator wordGenerator = new WordGenerator(100);}
+        var rnd = new Random(seed);
+        WordGenerator wordGenerator = new WordGenerator(seed);}
 
     @for (int i = 1; i <= 35; i++)
     {
         int colourIndex = rnd.Next(colourDict.Count);
         KeyValuePair<string, int>
-            pair = colourDict.ElementAt(colourIndex);
+        pair = colourDict.ElementAt(colourIndex);
         colourDict[pair.Key]++;
 
         <input type="button" id="button@(i.ToString())" value="@(wordGenerator.GetRandomWord())" class="butn @pair.Key" />

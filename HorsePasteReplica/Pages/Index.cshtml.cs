@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using Microsoft.AspNetCore.Routing;
 using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
@@ -10,6 +11,8 @@ namespace HorsePasteReplica.Pages
 {
     public class IndexModel : PageModel
     {
+        public int Seed { get; set; }
+
         private readonly ILogger<IndexModel> _logger;
 
         public IndexModel(ILogger<IndexModel> logger)
@@ -18,6 +21,11 @@ namespace HorsePasteReplica.Pages
         }
 
         public void OnGet()
+        {
+
+        }
+
+        public void OnPost()
         {
 
         }

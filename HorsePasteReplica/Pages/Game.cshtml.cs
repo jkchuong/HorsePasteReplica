@@ -10,6 +10,7 @@ namespace HorsePasteReplica.Pages
 {
     public class GameModel : PageModel
     {
+
         private readonly ILogger<GameModel> _logger;
 
         public GameModel(ILogger<GameModel> logger)
@@ -19,6 +20,7 @@ namespace HorsePasteReplica.Pages
 
         public void OnGet()
         {
+
         }
     }
 }
