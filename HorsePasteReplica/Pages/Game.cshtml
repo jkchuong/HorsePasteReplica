@@ -1,12 +1,15 @@
 ﻿@page
-@model GameModel
+@{
+    ViewData["Title"] = "Codenames Replica Game";
+}
+<h1>@ViewData["Title"]</h1>
 @using System
 @using Methods
 <div class="cont">
     @{ var seedString = (string)Request.Form["seedString"];
         int seed = Converter.StringToInt(seedString);
         Dictionary<string, int> colourDict = new Dictionary<string, int>
-    {
+{
         { "redButton", 0 },
         { "blueButton", 0 },
         { "greenButton", 0 },

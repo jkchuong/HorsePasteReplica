@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 
@@ -12,7 +13,7 @@ namespace HorsePasteReplica.Methods
         
         public WordGenerator(int seed)
         {
-            nounlist = File.ReadAllLines(@"\Users\jcsou\Documents\source\repos\HorsePasteReplica\HorsePasteReplica\nounlist.txt");
+            nounlist = File.ReadAllLines("nounlist.txt");
             random = new Random(seed);
         }
 
